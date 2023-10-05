@@ -1,8 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-function Header(){
+function Header(props){
     return <header>
-        <h1><a href="/">WEB</a></h1>
+        <h1><a href="/">{props.title}</a></h1>
     </header>
 }
 function Nav(){
@@ -26,7 +26,7 @@ function Article(){
 function App() {
   return (
     <div>
-        <Header></Header>
+        <Header title="REACT"></Header>
         <Nav></Nav>
         <Article></Article>
     </div>
