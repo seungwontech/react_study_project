@@ -20,15 +20,16 @@ function Nav(){
         </ol>
     </nav>
 }
-function Article(){
-    return <h2>welcome</h2>
+function Article(props){
+    return <h2>{props.title}, {props.body}</h2>
 }
 function App() {
   return (
     <div>
         <Header title="REACT"></Header>
         <Nav></Nav>
-        <Article></Article>
+        <Article title="Welcome" body="Hello, WEB"></Article>
+        <Article title="Welcome react" body="Hi"></Article>
     </div>
   );
 }
