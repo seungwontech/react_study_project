@@ -14,7 +14,12 @@ function Nav(props) {
     const lis = []
     for (let i = 0; i < props.topics.length; i++) {
         let t = props.topics[i];
-        lis.push(<li key={t.id}><a href={'/read/' + t.id}>{t.title}</a></li>)
+        lis.push(<li key={t.id}>
+            <a id={t.id} href={'/read/' + t.id} onClick={event => {
+                event.preventDefault();
+                props.onChangeMode(event.target.id);
+            }}>{t.title}</a>
+        </li>)
         /**
          *  key를 사용하는 이유
          *  - 컴포넌트의 변화를 감지하기 위해
@@ -43,7 +48,9 @@ function App() {
             <Header title="REACT" onChangeMode={() => {
                 alert('Header');
             }}></Header>
-            <Nav topics={topics}></Nav>
+            <Nav topics={topics} onChangeMode={(id) => {
+                alert(id);
+            }}></Nav>
             <Article title="Welcome" body="Hello, WEB"></Article>
         </div>
     );
