@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import {useState} from 'react';
 
 function Header(props) {
     return <header>
@@ -38,7 +39,15 @@ function Article(props) {
 }
 
 function App() {
-    const mode = 'READ';
+    /**
+     * const _mode = useState('READ');
+     * const mode = _mode[0];
+     * const setMode = _mode[1];
+     * 초기값
+     * 초기값은 0번째 인덱스 값
+     * state 값 변경은 1번째 인덱스 값으로
+     */
+    const [mode, setMode] = useState('WELCOME');
     const topics = [
         {id: 1, title: 'html', body: 'html is...'},
         {id: 2, title: 'css', body: 'css is ...'},
