@@ -62,10 +62,10 @@ function App() {
     return (
         <div>
             <Header title="REACT" onChangeMode={() => {
-                mode = 'WELCOME'
+                setMode('WELCOME')
             }}></Header>
             <Nav topics={topics} onChangeMode={(id) => {
-                mode = 'READ'
+                setMode('READ')
             }}></Nav>
             {content}
         </div>
